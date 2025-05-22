@@ -1,4 +1,4 @@
-import { useSyncExternalStore, useCallback, useMemo } from "react";
+import { useSyncExternalStore, useCallback, useMemo, useEffect } from "react";
 import superjson from "superjson";
 
 export type StorageWrapper<T> =
@@ -40,7 +40,9 @@ export const useLocalStorage = <T>(key: string, initialValue?: T) => {
   }, [key]);
 
   // Run migration once when hook is initialized
-  migrateData();
+  useEffect(() => {
+    migrateData();
+  }, [migrateData]);
 
   const getSnapshot = useCallback(() => {
     return localStorage.getItem(key);

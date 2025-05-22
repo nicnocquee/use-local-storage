@@ -3,7 +3,7 @@
   "description": "A custom hook that simplifies storing, retrieving, and clearing any types of data from the local storage including sync with other tabs",
   "private": false,
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "vite",
     "build": "tsup",
